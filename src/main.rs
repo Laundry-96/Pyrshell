@@ -1,9 +1,10 @@
 use std::io::{self, Write};
 use std::process::Command;
-
+use process::Prompt;
 fn main()
 {
 	let mut exit_status;
+    let prompt = Prompt.new();
     loop
     {
         print!("Shelly$ ");
