@@ -1,13 +1,14 @@
 use std::io::{self, Write};
 use std::process::Command;
-use process::Prompt;
+mod environment;
 fn main()
 {
-	let mut exit_status;
-    let prompt = Prompt.new();
+	
+    let mut exit_status;
+    let prompt = environment::prompt::Prompt::new();
     loop
     {
-        print!("Shelly$ ");
+        print!("{}", prompt.get_shell_prompt());
         io::stdout().flush().unwrap();
 
         let mut command = String::new();

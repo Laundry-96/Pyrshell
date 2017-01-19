@@ -1,1 +1,1 @@
-pub mod Prompt;
+pub mod prompt;
