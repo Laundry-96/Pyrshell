@@ -5,6 +5,6 @@ mod tests {
     }
 }
 
-mod process;
+//mod process;
 mod environment;
-mod built_in;
+//mod built_in;
