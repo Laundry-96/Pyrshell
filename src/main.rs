@@ -14,9 +14,8 @@ fn main()
         let mut command = String::new();
         match io::stdin().read_line(&mut command) {
             Err(error) => { println!("Error reading line"); continue; },
-            _ => (),
+            _ => process::interpreter::interpret(command),
         }
-	process::interpreter::interpret(command);
 
     }		
 }
