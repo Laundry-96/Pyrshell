@@ -3,7 +3,7 @@ use std::string;
 use std::result;
 pub fn exec(command: Vec<&str>) {
 	println!("{:?}", command);
-	let mut child = Command::new(command[0]).spawn();
+	let mut child = Command::new(command[0]).args(&command[1..]).spawn();
 
 		
 	if(child.is_ok()){
