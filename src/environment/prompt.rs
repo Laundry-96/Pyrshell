@@ -1,5 +1,3 @@
-use std::env;
-
 /// Creates a struct for a Prompt
 ///
 /// A prompt consists of a string that is printed out to a user
@@ -21,7 +19,7 @@ impl Prompt {
     /// ```
     pub fn new() -> Prompt
     {
-        let mut new_prompt = Prompt
+        let new_prompt = Prompt
         {
             shell_prompt: "SHELLY$ ".to_owned(),
         };

@@ -1,5 +1,4 @@
 use std::io::{self, Write};
-use std::process::Command;
 mod process;
 mod environment;
 fn main()
@@ -13,7 +12,7 @@ fn main()
 
         let mut command = String::new();
         match io::stdin().read_line(&mut command) {
-            Err(error) => { println!("Error reading line"); continue; },
+            Err(error) => { println!("Error reading line: {}", error); continue; },
             _ => process::interpreter::interpret(command),
         }
 
