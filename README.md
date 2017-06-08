@@ -1,5 +1,5 @@
-# Shelly
-	Shelly is a simple shell, that is being developed for me to get a better handle on rust
+# Pyrshell
+	Pyrshell is a simple shell, that is being developed for me to get a better handle on rust
 
 ## Prerequisites
 	Rust-Lang 1.13.0
@@ -15,6 +15,6 @@
 	Clone repo
 	cd to repo
 	run "Cargo build"
-	copy target/debug/shelly to /usr/bin
-	run "exec shelly"
+	copy target/debug/pyrshell to /usr/bin
+	run "exec pyrshell"
 
