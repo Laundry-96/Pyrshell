@@ -1,5 +1,6 @@
 # Pyrshell
 	Pyrshell is a simple shell, that is being developed for me to get a better handle on rust
+    Has a Python backend (pipes commands that aren't programs into python for interpretation)
 
 ## Prerequisites
 	Rust-Lang 1.13.0
