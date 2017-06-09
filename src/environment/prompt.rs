@@ -3,7 +3,7 @@
 /// A prompt consists of a string that is printed out to a user
 /// to infer input is requested
 pub struct Prompt {
-    /// String that is printed out, assigned to "SHELLY$ " upon new instance
+    /// String that is printed out, assigned to "PYRSH$ " upon new instance
     shell_prompt: String,
 }
 
@@ -21,7 +21,7 @@ impl Prompt {
     {
         let new_prompt = Prompt
         {
-            shell_prompt: "SHELLY$ ".to_owned(),
+            shell_prompt: "PYRSH$ ".to_owned(),
         };
 
         new_prompt
