@@ -1,4 +1,5 @@
 use process::process;
+use std;
 pub fn interpret(cmd: String)
 {
 	let trimmed_cmd = cmd.trim();
@@ -7,7 +8,10 @@ pub fn interpret(cmd: String)
 	if trimmed_cmd.len() == 0 {
 		return ();
 	}
-
+	if trimmed_cmd == "exit"{
+		use std::process::exit;
+		std::process::exit(1);
+	}
 	let parsed_command: Vec<_> = cmd.split_whitespace().collect();
 
 	// If there is nothing entered, just reprint shell
