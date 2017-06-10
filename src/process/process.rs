@@ -1,7 +1,7 @@
 use std::process::Command;
 
 /// Executes the command given to it, along with arguments
-pub fn exec(command: Vec<&str>) {
+pub fn exec(command: Vec<&str>) -> bool {
 
 
     //Create a new command process (essentially fork)
@@ -9,9 +9,10 @@ pub fn exec(command: Vec<&str>) {
 		
 	if child.is_ok() {
 		child.unwrap().wait();
+        return true;
 	}
 	else {
+        return false;
 		println!("{}", child.err().unwrap());
 	}
-	//child.wait().expect("command wasn't running?");
 }
