@@ -1,5 +1,7 @@
 use process::process;
+use std::error::Error;
 use std;
+use std::io::prelude::*;
 pub fn interpret(cmd: String)
 {
 	let trimmed_cmd = cmd.trim();
@@ -19,7 +21,16 @@ pub fn interpret(cmd: String)
 		println!();
 	}
 
-	process::exec(parsed_command);	
+	let valid_command = process::exec(parsed_command);	
+
+    if !valid_command {
+        use std::process::{Command, Stdio};
+        let child = match Command::new("python").stdin(Stdio::piped()).spawn() {
+            Err(why) => panic!("couldn't spawn python: {}", why.description()),
+            Ok(process) => process,
+        };
+        child.stdin.unwrap().write_all(cmd.as_bytes());
+    }
 	/* Check built in commands */
 	/* By checking what belongs where */
 }	
